@@ -1,0 +1,22 @@
+import torch
+
+def tensor_op(x, y, op):
+    """
+    Returns: list (result tensor converted via .tolist())
+    """
+    x = torch.Tensor(x)
+    y = torch.Tensor(y)
+    if op == "add":
+        out = torch.add(x,y)
+    elif op == "multiply":
+        out = torch.mul(x,y)
+    elif op == "matmul":
+        out = torch.matmul(x,y)
+    elif op == "power":
+        out = torch.pow(x,y)
+    elif op == "max":
+        out = torch.max(x,y)
+    else:
+        raise NotImplementedError
+    return out.tolist()
+        
